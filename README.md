@@ -84,3 +84,9 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
 ```
+```shell
+hh clean
+hh compile
+hh run scripts/deploy.js --network rinkeby
+hh verify --network rinkeby <contract address to verify>
+```
