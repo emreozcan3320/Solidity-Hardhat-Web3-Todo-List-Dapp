@@ -18,26 +18,24 @@ const NavBar = ({ accounts, setAccounts }) => {
     }
 
     return (
-        <div>
-            <div>Facebook</div>
-            <div>Twitter</div>
-            <div>Email</div>
-            <div>About</div>
-            <div>Team</div>
-
-            <div>
+        <ul className="justify-content-end navbar navbar-dark bg-dark navBar">
+            <li className="nav-item navBarItem">
+                <span className="text-light" aria-current="page">Facebook</span>
+            </li>
+            <li className="nav-item navBarItem">
+                <span className="text-light" aria-current="page">Twitter</span>
+            </li>
+            <li className="nav-item navBarItem">
+                <span className="text-light" aria-current="page">About</span>
+            </li>
+            <li className="nav-item navBarItem">
                 {
-                    isConnected ? (
-                        <div>Connected</div>
-                    ) : (
-                        <div>
-                            <button onClick={connectAccount}>Connect Wallet</button>
-                            <button onClick={hello}>Hello</button>
-                        </div>
-                    )
+                    isConnected
+                        ? (<span className="badge bg-success">Wallet Connected</span>)
+                        : (<button type="button" className="btn btn-primary" onClick={connectAccount}>Connect Wallet</button>)
                 }
-            </div>
-        </div>
+            </li>
+        </ul>
     )
 
 }
